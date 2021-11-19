@@ -16,7 +16,7 @@ install [Kaggle CLI](https://github.com/Kaggle/kaggle-api), and
 
 1. Clone this repository into `/path/to/vektonn-examples` dir:
 ```bash
-git clone git@github.com:vektonn/vektonn-examples.git /path/to/vektonn-examples
+git clone https://github.com/vektonn/vektonn-examples.git /path/to/vektonn-examples
 ```
 
 2. Run Jypiter Notebook from that directory:
