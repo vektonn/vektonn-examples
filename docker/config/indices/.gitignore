@@ -1,2 +1,4 @@
 *
 !.gitignore
+!QuickStart.Index/
+!QuickStart.Index/*.yaml
