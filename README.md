@@ -1,34 +1,17 @@
 # Vektonn playground
 
-## Prerequisites
+This repository contains various examples of Vektonn usage:
 
-To run notebooks presented in this repository locally you will need to install:
-* [Docker](https://docs.docker.com/get-docker/)
-* [Python >= 3.7](https://www.python.org/downloads/)
-* [Jupiter Notebook](https://jupyter.readthedocs.io/en/latest/install/notebook-classic.html)
+* [quick-start](quick-start) directory contains simple programs in different languages demonstrating Vektonn API usage
+* In [jupyter-notebooks](jupyter-notebooks) directory you'll find examples of solving problems similar to real ones
 
-To download datasets for provided examples you will need to register account on [Kaggle](https://www.kaggle.com/),
-install [Kaggle CLI](https://github.com/Kaggle/kaggle-api), and
-[prepare authentication token](https://www.kaggle.com/docs/api#getting-started-installation-&-authentication) to use its API.
+## Quick Start
 
+In order to run Vektonn locally you will need to install [Docker](https://docs.docker.com/get-docker/).
 
-## To run example notebooks
-
-1. Clone this repository into `/path/to/vektonn-examples` dir:
+Run Vektonn configured for QuickStart examples:
 ```bash
-git clone https://github.com/vektonn/vektonn-examples.git /path/to/vektonn-examples
+./docker/run-vektonn.sh QuickStart.Index
 ```
 
-2. Run Jypiter Notebook from that directory:
-```bash
-jupyter notebook --notebook-dir=/path/to/vektonn-examples
-```
-
-3. Select notebook to run (e.g. `jupyter-notebooks/hotels/hotels.ipynb`).
-
-4. Download necessary dataset for selected notebook:
-```bash
-/path/to/vektonn-examples/jupyter-notebooks/hotels/download-dataset.sh
-```
-
-5. Run selected notebook using Jypiter Notebook GUI.
+Look at [docker-compose.yaml](docker/docker-compose.yaml) to understand how to setup local Vektonn with single index shard.
