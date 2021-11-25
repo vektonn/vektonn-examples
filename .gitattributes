@@ -3,6 +3,13 @@
 # auto detect text files and perform LF normalization
 *             text=auto
 
+*.cs          text
+*.csproj      text
+*.props       text
+*.targets     text
+*.config      text
+*.sln         text
+*.json        text
 *.py          text
 *.ipynb       text
 *.yml         text
