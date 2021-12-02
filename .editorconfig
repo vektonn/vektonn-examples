@@ -8,8 +8,8 @@ indent_size = 4
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.{csproj,props,targets,config,json,yml,yaml}]
+[*.{csproj,props,targets,config,json,tpl,yml,yaml}]
 indent_size = 2
 
-[*.sh]
+[*.{sh,tpl,yml,yaml}]
 end_of_line = lf

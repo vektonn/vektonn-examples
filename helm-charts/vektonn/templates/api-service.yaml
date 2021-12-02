@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "vektonn.api.name" . }}
+  labels:
+    {{- include "vektonn.api.labels" . | nindent 4 }}
+spec:
+  type: NodePort
+  selector:
+    {{- include "vektonn.api.selectorLabels" . | nindent 4 }}
+  ports:
+  - name: http
+    port: {{ .Values.vektonnApi.serviceHttpPort }}
+    nodePort: {{ .Values.vektonnApi.nodeHttpPort }}
+    targetPort: {{ .Values.vektonnApi.containerHttpPort }}

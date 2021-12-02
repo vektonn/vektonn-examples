@@ -1,0 +1,54 @@
+{{- $apiName := include "vektonn.api.name" . -}}
+{{- $dockerImageRepositoryAndTag := printf "%s:%s" .Values.vektonnApi.dockerImage .Values.vektonnShared.dockerTag -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $apiName }}
+  labels:
+    {{- include "vektonn.api.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.vektonnApi.replicaCount }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      {{- include "vektonn.api.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "vektonn.api.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+      - name: {{ $apiName }}
+        image: {{ $dockerImageRepositoryAndTag | quote }}
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: {{ .Values.vektonnApi.resources.cpu }}
+            memory: {{ .Values.vektonnApi.resources.memory }}
+            ephemeral-storage: {{ .Values.vektonnApi.resources.storage }}
+          requests:
+            cpu: {{ .Values.vektonnApi.resources.cpu }}
+            memory: {{ .Values.vektonnApi.resources.memory }}
+            ephemeral-storage: {{ .Values.vektonnApi.resources.storage }}
+        env:
+        - name: VEKTONN_KAFKA_BOOTSTRAP_SERVERS
+          value: {{ .Values.vektonnShared.kafkaBootstrapServers | quote }}
+        ports:
+        - name: http
+          protocol: TCP
+          containerPort: {{ .Values.vektonnApi.containerHttpPort }}
+        volumeMounts:
+{{- range $path, $_ := .Files.Glob "config/**.yaml" }}
+        - name: config-volume
+          readOnly: true
+          subPath: {{ sha256sum $path }}
+          mountPath: {{ printf "/vektonn/%s" $path }}
+{{- end }}
+      volumes:
+      - name: config-volume
+        configMap:
+          name: {{ include "vektonn.name" . }}

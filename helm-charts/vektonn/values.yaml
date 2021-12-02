@@ -1,0 +1,33 @@
+vektonnShared:
+  dockerTag: 0.5.12
+  kafkaBootstrapServers: kafka-broker:9092
+
+vektonnApi:
+  replicaCount: 1
+  serviceHttpPort: 80
+  nodeHttpPort: 30080
+  containerHttpPort: 8081
+  dockerImage: vektonn/api-service
+  resources:
+    cpu: 500m
+    memory: 128Mi
+    storage: 10Mi
+
+vektonnIndexShards:
+  httpPort: 8082
+  dockerImage: vektonn/index-shard-service
+
+  vektonn-index-shard: # this name is used as a corresponding k8s service name
+    indexName: QuickStart.Index
+    indexVersion: "1.0"
+    indexShardId: SingleShard
+    replicaCount: 2
+    resources: {}
+#      limits:
+#        cpu: 1000m
+#        memory: 1024Mi
+#        ephemeral-storage: 10Mi
+#      requests:
+#        cpu: 200m
+#        memory: 128Mi
+#        ephemeral-storage: 10Mi

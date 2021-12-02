@@ -30,20 +30,20 @@ install [Kaggle CLI](https://github.com/Kaggle/kaggle-api), and
 ## To run example notebooks
 
 1. Clone this repository into `/path/to/vektonn-examples` dir:
-```bash
-git clone https://github.com/vektonn/vektonn-examples.git /path/to/vektonn-examples
-```
+    ```bash
+    git clone https://github.com/vektonn/vektonn-examples.git /path/to/vektonn-examples
+    ```
 
-2. Run Jupyter Notebook from that directory:
-```bash
-jupyter notebook --notebook-dir=/path/to/vektonn-examples
-```
+1. Run Jupyter Notebook from that directory:
+    ```bash
+    jupyter notebook --notebook-dir=/path/to/vektonn-examples
+    ```
 
-3. Select notebook to run (e.g. `jupyter-notebooks/hotels/hotels.ipynb`).
+1. Select notebook to run (e.g. `jupyter-notebooks/hotels/hotels.ipynb`).
 
-4. Download necessary dataset for selected notebook:
-```bash
-/path/to/vektonn-examples/jupyter-notebooks/hotels/download-dataset.sh
-```
+1. Download necessary dataset for selected notebook:
+    ```bash
+    /path/to/vektonn-examples/jupyter-notebooks/hotels/download-dataset.sh
+    ```
 
-5. Run selected notebook using Jupyter Notebook GUI.
+1. Run selected notebook using Jupyter Notebook GUI.

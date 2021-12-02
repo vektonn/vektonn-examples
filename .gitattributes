@@ -12,10 +12,15 @@
 *.json        text
 *.py          text
 *.ipynb       text
-*.yml         text
-*.yaml        text
 *.txt         text
 *.md          text
 
 # explicitly use LF
 *.sh          text eol=lf
+*.tpl         text eol=lf
+*.yml         text eol=lf
+*.yaml        text eol=lf
+
+# For GitHub language statistics to be correct
+*.tpl linguist-language=yaml
+jupyter-notebooks/** linguist-vendored

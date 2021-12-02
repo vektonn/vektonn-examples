@@ -1,0 +1,3 @@
+kafkaDockerImageTag: confluentinc/cp-kafka:7.0.0
+kafkaHostname: kafka-broker
+kafkaPort: 9092

@@ -1,0 +1,1 @@
+{{ include "vektonn.indexShard" (mergeOverwrite . (dict "indexShardName" "vektonn-index-shard") ) }}
