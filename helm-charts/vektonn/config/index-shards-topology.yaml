@@ -1,0 +1,3 @@
+QuickStart.Index:
+  1.0:
+    SingleShard: vektonn-index-shard:{{ .Values.vektonnIndexShards.httpPort }} # hostname corresponds to k8s service name

@@ -1,5 +1,5 @@
 vektonnShared:
-  dockerTag: 0.5.12
+  dockerTag: 0.6.1
   kafkaBootstrapServers: kafka-broker:9092
 
 vektonnApi:
