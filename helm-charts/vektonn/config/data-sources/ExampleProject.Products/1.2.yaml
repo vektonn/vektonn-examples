@@ -1,0 +1,12 @@
+vectorDimension: 32
+vectorsAreSparse: false
+attributeValueTypes:
+  ProductId: Guid
+  ProductCategory: string
+  ProductName: string
+  ShopId: Guid
+  ProductImageUrl: string
+permanentAttributes: ["ProductId", "ProductCategory", "ShopId"]
+shardersByAttributeKey:
+  ProductCategory:
+    numberOfShards: 2

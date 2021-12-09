@@ -1,0 +1,49 @@
+dataSourceId:
+  name: ExampleProject.Products
+  version: 1.2
+indexAlgorithm: FaissIndex.Flat.IP
+idAttributes: ["ProductId"]
+splitAttributes: []
+shardsById:
+  ShardA1:
+    shardsByAttributeKey:
+      ShopId:
+        numberOfShards: 6
+        shardValues: [0, 1, 2]
+    dataSourceShardsToConsume:
+    - shardingCoordinatesByAttributeKey:
+        ProductCategory: 0
+  ShardA2:
+    shardsByAttributeKey:
+      ShopId:
+        numberOfShards: 6
+        shardValues: [0, 1, 2]
+    dataSourceShardsToConsume:
+    - shardingCoordinatesByAttributeKey:
+        ProductCategory: 1
+  ShardB1:
+    shardsByAttributeKey:
+      ShopId:
+        numberOfShards: 6
+        shardValues: [3, 4]
+    dataSourceShardsToConsume:
+    - shardingCoordinatesByAttributeKey:
+        ProductCategory: 0
+  ShardB2:
+    shardsByAttributeKey:
+      ShopId:
+        numberOfShards: 6
+        shardValues: [3, 4]
+    dataSourceShardsToConsume:
+    - shardingCoordinatesByAttributeKey:
+        ProductCategory: 1
+  ShardC:
+    shardsByAttributeKey:
+      ShopId:
+        numberOfShards: 6
+        shardValues: [5]
+    dataSourceShardsToConsume:
+    - shardingCoordinatesByAttributeKey:
+        ProductCategory: 0
+    - shardingCoordinatesByAttributeKey:
+        ProductCategory: 1

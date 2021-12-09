@@ -1,0 +1,17 @@
+dataSourceId:
+  name: ExampleProject.Products
+  version: 1.1
+indexAlgorithm: FaissIndex.Flat.IP
+idAttributes: ["ProductId"]
+splitAttributes: []
+shardsById:
+  ShardA:
+    shardsByAttributeKey:
+      ShopId:
+        numberOfShards: 6
+        shardValues: [0, 1, 2]
+  ShardB:
+    shardsByAttributeKey:
+      ShopId:
+        numberOfShards: 6
+        shardValues: [3, 4, 5]

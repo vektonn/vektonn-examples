@@ -22,7 +22,7 @@ vektonnIndexShards:
     indexVersion: "1.0"
     indexShardId: SingleShard
     replicaCount: 2
-    resources: {}
+#    resources:
 #      limits:
 #        cpu: 1000m
 #        memory: 1024Mi
@@ -31,3 +31,60 @@ vektonnIndexShards:
 #        cpu: 200m
 #        memory: 128Mi
 #        ephemeral-storage: 10Mi
+
+  products-1-1-shard-a:
+    indexName: ExampleProject.Products
+    indexVersion: "1.1"
+    indexShardId: ShardA
+    replicaCount: 1
+
+  products-1-1-shard-b:
+    indexName: ExampleProject.Products
+    indexVersion: "1.1"
+    indexShardId: ShardB
+    replicaCount: 1
+
+  products-1-2-shard-a1:
+    indexName: ExampleProject.Products
+    indexVersion: "1.2"
+    indexShardId: ShardA1
+    replicaCount: 1
+
+  products-1-2-shard-a2:
+    indexName: ExampleProject.Products
+    indexVersion: "1.2"
+    indexShardId: ShardA2
+    replicaCount: 1
+
+  products-1-2-shard-b1:
+    indexName: ExampleProject.Products
+    indexVersion: "1.2"
+    indexShardId: ShardB1
+    replicaCount: 1
+
+  products-1-2-shard-b2:
+    indexName: ExampleProject.Products
+    indexVersion: "1.2"
+    indexShardId: ShardB2
+    replicaCount: 1
+
+  products-1-2-shard-c:
+    indexName: ExampleProject.Products
+    indexVersion: "1.2"
+    indexShardId: ShardC
+    replicaCount: 1
+
+  products-by-category-1-0-shard:
+    indexName: ExampleProject.Products.ByCategory
+    indexVersion: "1.0"
+    indexShardId: SingleShard
+    replicaCount: 1
+    resources:
+      limits:
+        cpu: 1000m
+        memory: 1024Mi
+        ephemeral-storage: 10Mi
+      requests:
+        cpu: 200m
+        memory: 128Mi
+        ephemeral-storage: 10Mi

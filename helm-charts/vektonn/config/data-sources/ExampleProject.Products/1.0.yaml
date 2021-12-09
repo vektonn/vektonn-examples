@@ -1,0 +1,8 @@
+vectorDimension: 32
+vectorsAreSparse: false
+attributeValueTypes:
+  ProductId: Guid
+  ProductCategory: string
+  ProductName: string
+  ShopId: Guid
+permanentAttributes: ["ProductId", "ProductCategory", "ShopId"]

@@ -1,3 +1,18 @@
 QuickStart.Index:
   1.0:
     SingleShard: vektonn-index-shard:{{ .Values.vektonnIndexShards.httpPort }} # hostname corresponds to k8s service name
+
+ExampleProject.Products:
+  1.1:
+    ShardA: products-1-1-shard-a:{{ .Values.vektonnIndexShards.httpPort }}
+    ShardB: products-1-1-shard-b:{{ .Values.vektonnIndexShards.httpPort }}
+  1.2:
+    ShardA1: products-1-2-shard-a1:{{ .Values.vektonnIndexShards.httpPort }}
+    ShardA2: products-1-2-shard-a2:{{ .Values.vektonnIndexShards.httpPort }}
+    ShardB1: products-1-2-shard-b1:{{ .Values.vektonnIndexShards.httpPort }}
+    ShardB2: products-1-2-shard-b2:{{ .Values.vektonnIndexShards.httpPort }}
+    ShardC: products-1-2-shard-c:{{ .Values.vektonnIndexShards.httpPort }}
+
+ExampleProject.Products.ByCategory:
+  1.0:
+    SingleShard: products-by-category-1-0-shard:{{ .Values.vektonnIndexShards.httpPort }}

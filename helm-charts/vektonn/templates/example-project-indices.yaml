@@ -1,0 +1,10 @@
+{{ include "vektonn.indexShard" (mergeOverwrite . (dict "indexShardName" "products-1-1-shard-a") ) }}
+{{ include "vektonn.indexShard" (mergeOverwrite . (dict "indexShardName" "products-1-1-shard-b") ) }}
+
+{{ include "vektonn.indexShard" (mergeOverwrite . (dict "indexShardName" "products-1-2-shard-a1") ) }}
+{{ include "vektonn.indexShard" (mergeOverwrite . (dict "indexShardName" "products-1-2-shard-a2") ) }}
+{{ include "vektonn.indexShard" (mergeOverwrite . (dict "indexShardName" "products-1-2-shard-b1") ) }}
+{{ include "vektonn.indexShard" (mergeOverwrite . (dict "indexShardName" "products-1-2-shard-b2") ) }}
+{{ include "vektonn.indexShard" (mergeOverwrite . (dict "indexShardName" "products-1-2-shard-c") ) }}
+
+{{ include "vektonn.indexShard" (mergeOverwrite . (dict "indexShardName" "products-by-category-1-0-shard") ) }}
