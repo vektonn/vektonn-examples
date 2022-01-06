@@ -1,7 +1,8 @@
 dataSourceId:
   name: ExampleProject.Products
   version: 1.0
-indexAlgorithm: FaissIndex.Flat.IP
+indexAlgorithm:
+  type: FaissIndex.IP
 idAttributes: ["ProductId"]
 splitAttributes: ["ShopId"]
 shardsById:
