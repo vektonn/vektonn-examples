@@ -1,11 +1,9 @@
 
-**Vektonn** is a high-performance battle-tested [kNN vector search](https://en.wikipedia.org/wiki/Nearest_neighbor_search#k-nearest_neighbors) engine for your data science applications. 
-It helps you manage vectors' lifecycle and radically reduces time to market.
+# Vektonn playground
+
+**Vektonn** is a high-performance battle-tested [kNN vector search](https://en.wikipedia.org/wiki/Nearest_neighbor_search#k-nearest_neighbors) engine for your data science applications. It helps you manage vectors' lifecycle and radically reduces time to market.
 
 See [documentation](https://vektonn.github.io/vektonn/) for more info.
-
-
-# Vektonn playground
 
 This repository contains various examples of how to use Vektonn:
 
