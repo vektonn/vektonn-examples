@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Vektonn.ApiClient" Version="0.5.12" />
+    <PackageReference Include="Vektonn.ApiClient" Version="0.6.10" />
   </ItemGroup>
 
 </Project>
