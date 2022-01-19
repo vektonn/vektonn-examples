@@ -1,27 +1,27 @@
 from vektonn import Vektonn
-from vektonn.dtos import AttributeDto, AttributeValueDto, VectorDto, InputDataPointDto, SearchQueryDto
+from vektonn.dtos import Attribute, AttributeValue, Vector, InputDataPoint, SearchQuery
 
 vektonn_client = Vektonn('http://localhost:8081')
 
 input_data_points = [
-    InputDataPointDto(
+    InputDataPoint(
         attributes=[
-            AttributeDto(key='id', value=AttributeValueDto(int64=1)),
-            AttributeDto(key='payload', value=AttributeValueDto(string='first data point')),
+            Attribute(key='id', value=AttributeValue(int64=1)),
+            Attribute(key='payload', value=AttributeValue(string='first data point')),
         ],
-        vector=VectorDto(is_sparse=False, coordinates=[0.0, 1.0])),
-    InputDataPointDto(
+        vector=Vector(is_sparse=False, coordinates=[0.0, 1.0])),
+    InputDataPoint(
         attributes=[
-            AttributeDto(key='id', value=AttributeValueDto(int64=2)),
-            AttributeDto(key='payload', value=AttributeValueDto(string='second data point')),
+            Attribute(key='id', value=AttributeValue(int64=2)),
+            Attribute(key='payload', value=AttributeValue(string='second data point')),
         ],
-        vector=VectorDto(is_sparse=False, coordinates=[1.0, 0.0])),
-    InputDataPointDto(
+        vector=Vector(is_sparse=False, coordinates=[1.0, 0.0])),
+    InputDataPoint(
         attributes=[
-            AttributeDto(key='id', value=AttributeValueDto(int64=3)),
-            AttributeDto(key='payload', value=AttributeValueDto(string='third data point')),
+            Attribute(key='id', value=AttributeValue(int64=3)),
+            Attribute(key='payload', value=AttributeValue(string='third data point')),
         ],
-        vector=VectorDto(is_sparse=False, coordinates=[-0.5, 0.0])),
+        vector=Vector(is_sparse=False, coordinates=[-0.5, 0.0])),
 ]
 
 vektonn_client.upload(
@@ -30,8 +30,8 @@ vektonn_client.upload(
     input_data_points=input_data_points)
 
 k = 2
-search_query = SearchQueryDto(k=k, query_vectors=[
-    VectorDto(is_sparse=False, coordinates=[0.0, 2.0]),
+search_query = SearchQuery(k=k, query_vectors=[
+    Vector(is_sparse=False, coordinates=[0.0, 2.0]),
 ])
 
 search_results = vektonn_client.search(
