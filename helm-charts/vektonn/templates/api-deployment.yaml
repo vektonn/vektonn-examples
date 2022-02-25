@@ -37,6 +37,8 @@ spec:
         env:
         - name: VEKTONN_KAFKA_BOOTSTRAP_SERVERS
           value: {{ .Values.vektonnShared.kafkaBootstrapServers | quote }}
+        - name: VEKTONN_KAFKA_TOPIC_REPLICATION_FACTOR
+          value: {{ .Values.vektonnApi.kafkaTopicReplicationFactor | quote }}
         ports:
         - name: http
           protocol: TCP
