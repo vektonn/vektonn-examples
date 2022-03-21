@@ -38,7 +38,8 @@ const int k = 2;
 var searchQuery = new SearchQueryDto(
     K: k,
     QueryVectors: new[] { new DenseVectorDto(Coordinates: new[] { 0.0, 2.0 }) },
-    SplitFilter: null
+    SplitFilter: null,
+    RetrieveVectors: true
 );
 
 var searchResults = await vektonnClient.SearchAsync(
@@ -52,7 +53,7 @@ foreach (var fdp in searchResults[0].NearestDataPoints)
     var attrs = fdp.Attributes.ToDictionary(t => t.Key, t => t.Value);
     Console.WriteLine($" - '{attrs["payload"].String}' with " +
         $"id = {attrs["id"].Int64}, " +
-        $"vector = {FormatCoordinates(fdp.Vector)}, " +
+        $"vector = {FormatCoordinates(fdp.Vector!)}, " +
         $"distance = {fdp.Distance}");
 }
 
